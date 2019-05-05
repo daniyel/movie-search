@@ -1,0 +1,39 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: app.dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - frontend
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+    container_name: movieapp_client
+  server:
+    build:
+      context: ./
+      dockerfile: server.dockerfile
+    ports:
+      - "4000:4000"
+    networks:
+      - backend
+      - frontend
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+    container_name: movieapp_api
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+    volumes:
+       - "./cache:/data"
+    networks:
+      - backend
+    container_name: movieapp_cache
+networks:
+  backend:
+    driver: "bridge"
+  frontend:
+    driver: "bridge"

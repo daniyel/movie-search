@@ -1,0 +1,52 @@
+{
+  "name": "moviespa",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "async-redis": "^1.1.7",
+    "axios": "^0.18.0",
+    "config": "^3.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-scripts": "2.1.8",
+    "redis-jsonify": "^1.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start:api": "node api/server.js",
+    "build": "react-scripts build",
+    "test": "concurrently \"react-scripts test\" \"npm run test:api\"",
+    "test:api": "jest --watchAll ./api/**/*.test.js",
+    "eject": "react-scripts eject",
+    "serve": "./node_modules/.bin/serve -s build",
+    "dev": "concurrently \"yarn start\" \"yarn start:api\""
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "axios-mock-adapter": "^1.16.0",
+    "babel-core": "^6.26.3",
+    "concurrently": "^4.1.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "fetch-mock": "^7.3.1",
+    "node-fetch": "^2.3.0",
+    "node-mocks-http": "^1.7.3",
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
+    "query-string": "^6.4.0",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-mock-store": "^1.5.3",
+    "redux-thunk": "^2.3.0"
+  }
+}

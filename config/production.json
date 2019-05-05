@@ -1,0 +1,6 @@
+{
+    "redis": {
+        "host": "movieapp_cache",
+        "port": 6379
+    }
+}

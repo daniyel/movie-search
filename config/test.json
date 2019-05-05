@@ -1,0 +1,13 @@
+{
+    "omdb": {
+        "uri": "http://www.omdbapi.com",
+        "amount": 30,
+        "perPage": 10
+    },
+    "cache": {
+        "maxAge": 30
+    },
+    "server": {
+        "port": 4000
+    }
+}

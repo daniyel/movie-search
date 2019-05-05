@@ -1,0 +1,10 @@
+build
+node_modules
+*.dockerfile
+.gitignore
+*.yml
+*.md
+*.log
+package-lock.json
+__mocks__
+cache

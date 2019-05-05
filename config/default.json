@@ -1,0 +1,14 @@
+{
+    "omdb": {
+        "uri": "http://www.omdbapi.com",
+        "apiKey": "<MY_API_KEY>",
+        "amount": 30,
+        "perPage": 10
+    },
+    "cache": {
+        "maxAge": 30
+    },
+    "server": {
+        "port": 4000
+    }
+}
