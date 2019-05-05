@@ -1,6 +1,10 @@
 # moviespa
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). I chose create-react-app boilerplate, because it has already everything integrated for development from running test, linting and setup. If you need redux, you need to wire that yourself, which can be a little bit more work. I chose Redis for caching the requests, because it persists data on the disk and I had previous experience using Redis for caching and quick access of resources. For production use I might use Varnish which caches requests, so we avoid sending requests to the backend at all.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## How does it work
+
+It uses open source omdb api, to fetch movies. Search starts after 3 or more letters, are typed into the search bar. Search is executed after user stops typing for 300 milliseconds. Requests are being cached on client side for 30 seconds (`Cache-Control`) and in Redis.
 
 ## Prerequisites
 
@@ -58,3 +62,5 @@ API server is running on: [http://localhost:4000](http://localhost:4000)
 - rtl and ltr support
 - testing on different devices
 - maybe I would use Varnish for request caching, so requests would not go to the backend at all
+
+
