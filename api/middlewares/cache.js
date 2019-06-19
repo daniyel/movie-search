@@ -9,7 +9,7 @@ let redisClient = jsonify(asyncRedis.createClient({
 }));
 
 redisClient.on('error', (err) => {
-    console.log(`Redis error: ${err.message}`);
+    console.error(`Redis error: ${err.message}`);
 });
 
 redisClient.on('ready', () => {
@@ -21,7 +21,13 @@ const cache = () => {
         const parseUrl = queryString.parseUrl(req.url);
         const stringifyQuery = queryString.stringify(parseUrl.query);
         const cacheKey = `__req__${parseUrl.url}?${stringifyQuery}`;
-        const cachedResponse = await redisClient.get(cacheKey);
+        let cachedResponse = null;
+
+        try {
+            cachedResponse = await redisClient.get(cacheKey);
+        } catch (err) {
+            console.error('Error retrieving response from cache', err);
+        }
 
         if (cachedResponse) {
             res.set('Cache-Control', `private, max-age=${config.get('cache.maxAge')}`);

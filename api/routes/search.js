@@ -2,6 +2,7 @@ const config = require('config');
 const axios = require('axios');
 
 const API_KEY = config.get('omdb.apiKey');
+console.log(API_KEY);
 const URL = config.get('omdb.uri');
 
 const createPages = () => {
@@ -31,11 +32,10 @@ module.exports = {
                 if (Response === 'True') {
                     return Search;
                 }
+                return null;
             });
 
             const moviesFlatten = [].concat(...movies);
-
-            console.log(moviesFlatten);
 
             res.set('Cache-Control', `private, max-age=${config.get('cache.maxAge')}`);
             res.json(moviesFlatten);

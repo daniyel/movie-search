@@ -1,0 +1,5 @@
+{
+    "omdb": {
+        "apiKey": "OMDB_APIKEY"
+    }
+}

@@ -22,6 +22,7 @@ services:
       - frontend
     environment:
       - NODE_ENV=${NODE_ENV:-production}
+      - OMDB_APIKEY=${OMDB_APIKEY:-replaceme}
     container_name: movieapp_api
   redis:
     image: "redis:alpine"

@@ -1,12 +1,12 @@
 {
-  "name": "moviespa",
+  "name": "movie-search",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "author": "",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/daniyel/example-react-spa.git"
+    "type": "git",
+    "url": "https://github.com/daniyel/movie-search.git"
   },
   "dependencies": {
     "async-redis": "^1.1.7",
@@ -16,7 +16,7 @@
     "express": "^4.16.4",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8",
+    "react-scripts": "^3.0.1",
     "redis-jsonify": "^1.2.0"
   },
   "scripts": {
